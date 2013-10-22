@@ -112,7 +112,6 @@ html {
 				}
 			}
 			.spacer {
-				.outline();
 				.clear();
 			}
 		}
@@ -244,7 +243,7 @@ html {
 @media all and (min-width: 769px) {
 	#gameWrapper {
 		#gameContent {
-			position: relative;
+			
 			.expertContainer {
 				width: 200px;
 				
@@ -259,16 +258,17 @@ html {
 				}
 			}
 			#games {
-				width: 75%;
-				position: absolute;
+				width: 80%;
+				/*position: absolute;
 				left: 200px;
-				.clear();
+				.clear();*/
+				.float();
+				margin-top: -112px;
+				
 				.gameContainer { 
-					width: 37%;
-					.float();
-					.outline(#ff4400);
-					
-
+					width: 45%;
+					display: inline-block;
+					padding: 5px;	
 					.gameInfoContainer {
 						
 
