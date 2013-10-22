@@ -1,0 +1,310 @@
+@import "mixins.less";
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.loop(@index) when (@index > 0) {
+	.game_@{index} { 
+	//(~".game_@{index}") { //old compiler
+		display: none;
+	}
+	.loop((@index - 1));
+}
+.loop (0) {}
+
+#gameWrapper {
+	background: #fff;
+	margin: 0;
+	#top {
+		height: 20px;
+		padding: 5px;
+		background: #ccc;
+		.font-size(14);
+	}
+	span.left {
+		.float(left);
+	}
+	span.right {
+		.float(right);
+	}
+	#gameContent {
+		padding: 5px;
+		.expertContainer {
+			.expertImage {
+				width: 100px;
+				margin-right: 10px;
+				margin-bottom: 10px;
+				.float();
+			}
+			.expertText {
+				.font-size(14);
+				.float();
+			}
+		}
+		#games {
+			.gameContainer {
+				.clear();
+				.gameInfoContainer {
+					.gameImage {
+						.float();
+						.font-size(16);
+						width: 50px;
+						height: 20px;
+						background: #ccc;
+						padding: 5px;
+						margin-right: 10px;
+						margin-bottom: 10px;
+						text-align: center;
+						border: 1px solid #333;
+					}
+					.gameHeading {
+						.float();
+						h1 {
+							.font-size(14);
+							font-weight: normal;
+							line-height: 12/2px;
+						}
+						h2 {
+							.font-size(16);
+							font-weight: bold;
+							line-height: 14/2px;
+						}
+					}
+					.gameInfo {
+						.font-size(14);
+						.clear();
+					}
+				}
+				.gamePrice {
+					
+					text-align: center;
+					.gameShares {
+						width: 50%;
+						.float();
+						.font-size(14);
+						span {
+							display: inline-block;
+							.font-size(16);
+							font-weight: bold;
+							text-align: center;
+						}
+					}
+					.gameBuy {
+						width: 50%;
+						.float();
+						.font-size(18);
+						font-weight: bold;
+						font-family: "Serpentine W01 Medium";
+						a {
+							//.mybutton(#CCC, #222);
+
+						}
+						a:hover {
+							//.mybuttonHover();
+						}
+					}
+				}
+			}
+		}
+	}
+	#footer {
+		.clear();
+		text-align: center;
+		background: #ccc;
+		padding: 5px;
+		.font-size(12);
+		a {
+			text-decoration: none;
+			color: RGB(90,118,167);
+		}
+	}
+}
+
+/* mq's */
+@media all and (max-width: 467px) {
+	#gameWrapper {
+		#top {
+			span.right {
+				.float(right);
+				display: none;
+			}	
+		}
+		#gameContent {
+			.expertContainer {
+				display: none;
+			}
+			#games {
+				.loop(5);
+				.gameContainer {
+					.gameHeading {
+						h1 {
+							.font-size(12);
+							line-height: 12/2px;
+						}
+						h2 {
+							.font-size(14);
+							line-height: 14/2px;
+						}
+					}
+					.gameInfo {
+						.font-size(12);
+					}
+					.gamePrice {
+						.gameShares {
+							span {
+								display: block;
+							}
+						}
+					}
+
+				}
+			}
+		}
+		
+	}
+}
+
+/*@media all and (max-width: 468px) and (min-width: 301px) {
+	#gameWrapper {
+		#top {
+			span.right {
+				.float(right);
+				display: none;
+			}	
+		}
+		#gameContent {
+			.expertContainer {
+				display: none;
+			}
+			#games {
+				.loop(5);
+				.gameContainer {
+					.gamePrice {
+						.gameShares {
+							span {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}*/
+
+@media all and (max-width: 580px) and (min-width: 468px) {
+	#gameWrapper {	
+		#top {
+			span.right {
+				.float(right);
+			}
+		}
+		#gameContent {
+			.expertContainer {
+				.expertText {
+					width: 75%;
+					.font-size(14);
+				}
+			}
+			#games {
+				.loop(5);
+			}
+		}
+	}
+}
+
+@media all and (max-width: 768px) and (min-width: 581px) {
+	#gameWrapper {
+		#gameContent {
+			.expertContainer {
+				.expertText {
+					width: 80%;
+					.font-size(14);
+				}
+			}
+			#games {
+				.loop(2);
+			}
+		}
+	}
+}
+
+@media all and (min-width: 769px) {
+	#gameWrapper {
+		#gameContent {
+			.clear();
+			.float();
+			.expertContainer {
+				width: 40%;
+				.outline();
+				
+				.expertImage {
+					
+				}
+				.expertText {
+					
+				}
+			}
+			#games {
+				.outline();
+				width: 40%;
+				.clear();
+				.float();
+				.gameContainer {
+					.gameInfoContainer {
+						width: 80%;
+						.float();
+						/*.gameHeading {
+							h1 {
+								.font-size(12);
+								line-height: 12/2px;
+							}
+							h2 {
+								.font-size(14);
+								line-height: 14/2px;
+							}
+						}
+						.gameInfo {
+							.font-size(12);
+						}*/
+					}
+					.gamePrice {
+						width: 150px;
+						.float();
+						.gameShares {
+							.clear();
+							span {
+								display: block;
+							}
+							.outline();
+							.font-size(10);
+							text-align: center;
+						}
+						.gameBuy {
+							.clear();
+							.outline();
+							text-align: center;
+						}
+					}
+				}
+				//.loop(0);
+				.spacer {
+					.clear();
+				}
+			}
+		}
+	}
+}
+
+/*@media all and (min-width: 980px) {
+	#gameWrapper {
+		
+	}
+}*/
