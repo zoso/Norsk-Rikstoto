@@ -174,7 +174,7 @@ html {
 	}
 }
 
-@media all and (max-width: 468px) and (min-width: 301px) {
+@media all and (min-width: 301px) and (max-width: 468px){
 	#gameWrapper {
 		#top {
 			span.right {
@@ -219,6 +219,30 @@ html {
 			}
 			#games {
 				.loop(5);
+				.gameInfoContainer {
+					width: 75%;
+					.float();
+				}
+				.gamePrice {
+					.float();
+					width: 25%;
+
+					.gameShares {
+						.outline(#ff3300);
+						.clear();
+
+						display: block;
+						span {
+							display: block;
+						}
+					}
+					.gameBuy {
+						.clear();
+						display: block;
+						.outline();
+						
+					}
+				}
 			}
 		}
 	}
