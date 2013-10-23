@@ -199,11 +199,10 @@ html {
 				}
 			}
 		}
-		
 	}
 }
 
-@media all and (max-width: 580px) and (min-width: 468px) {
+@media all and (min-width: 468px) and (max-width: 580px) {
 	#gameWrapper {	
 		#top {
 			span.right {
@@ -228,12 +227,13 @@ html {
 					width: 25%;
 
 					.gameShares {
-						.outline(#ff3300);
+						
 						.clear();
-
+						
 						display: block;
 						span {
-							display: block;
+							.font-size(20);
+							.outline();
 						}
 					}
 					.gameBuy {
@@ -248,7 +248,7 @@ html {
 	}
 }
 
-@media all and (max-width: 768px) and (min-width: 581px) {
+@media all and (min-width: 581px) and (max-width: 768px) {
 	#gameWrapper {
 		#gameContent {
 			.expertContainer {
