@@ -39,6 +39,15 @@
     line-height: ~"@{pxLineValue}rem";
 }
 
+.font-serpentine {
+	/*font-weight: bold;*/
+	font-family: "Serpentine W01 Medium";
+}
+
+.blue-bg {
+	background: url(img/blue_background.png) repeat-x;
+}
+
 .float(@type: left) {
 	float: @type;
 }
@@ -48,5 +57,84 @@
 }
 
 .outline(@col: #333333) {
-	outline: 1px solid @col;
+	outline: 2px solid @col;
+}
+
+.oban-button-reset() {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 5px;
+  padding: 4px 12px;
+}
+
+.oban-button-flat(@bgColor: #333, @textColor: #fff, @hoverBgColor: #336699, @hoverTextColor: #fff) {
+
+  .oban-button-reset();
+
+  background-color: @bgColor;
+  color: @textColor;
+  border: 1px solid @bgColor;
+
+  &.hover,
+  &:hover {
+    color: @hoverTextColor;
+    background-color: @hoverBgColor;
+    border: 1px solid @hoverBgColor;
+  }
+
+  &.active,
+  &:active {
+    background-color: @hoverBgColor;
+    border: 1px solid @hoverBgColor;
+    outline: 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  }
+
+}
+
+.oban-button-gradient(@bgColor: #fff, @bottomColor: #fff, @textColor: #333, @hoverBgColor: #666, @hoverTextColor: #fff) {
+
+  .oban-button-reset();
+
+  color: @textColor;
+
+  .oban-gradient(@bgColor, @bottomColor); //darken(@bgColor, 20)
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  border: 1px solid darken(@bgColor, 20);
+
+  &.hover,
+  &:hover {
+    background: darken(@bgColor, 10);
+  }
+
+  &.active,
+  &:active {
+    background-image: none;
+    outline: 0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  }
+}
+
+.oban-clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.oban-gradient(@startColor: #555, @endColor: #333) {
+  background-color: mix(@startColor, @endColor, 60%);
+  background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+  background-image: linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down
 }

@@ -1,0 +1,52 @@
+.mybutton (@bgdcolor, @fontcolor: #ffffff, @font-size: 12px, @corner: 5px, @padding: 5px 10px) {
+	display: inline-block;
+	*display: inline;
+	color: @fontcolor;
+    font-size: @font-size;
+	text-decoration: none;
+	cursor: pointer;
+	vertical-align: middle;
+    padding: @padding;
+	background-color: @bgdcolor;
+	background-image: url('http://d.cyhung.net/images/btn-overlay.png');
+	background-image: -moz-linear-gradient(top, lighten(@bgdcolor, 10%), @bgdcolor);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(lighten(@bgdcolor, 10%)), to(@bgdcolor));
+	background-image: -webkit-linear-gradient(top, lighten(@bgdcolor, 10%), @bgdcolor);
+	background-image: -o-linear-gradient(top, lighten(@bgdcolor, 10%), @bgdcolor);
+	background-image: linear-gradient(to bottom, lighten(@bgdcolor, 10%), @bgdcolor);
+	background-repeat: repeat-x;
+	border-radius: @corner;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.25); 
+	-webkit-transition: background 0.1s linear;
+	-moz-transition: background 0.1s linear;
+	transition: background 0.1s linear;
+}	
+.mybuttonHover (@bgdcolor:#e6e6e6, @fontcolor:#333333) { 
+	background-color: @bgdcolor; 
+	color: @fontcolor;
+	text-decoration:none;
+    background-position: 0 -99px;
+}
+
+.font-size(@font-size: 16){
+    @pxFontValue: (@font-size / 10);
+    @pxLineValue: (@font-size / 10 * 1.5);
+    font-size: @font-size * 1px;
+    line-height: @font-size * 1.5 * 1px;
+    font-size: ~"@{pxFontValue}rem";
+    line-height: ~"@{pxLineValue}rem";
+}
+
+.float(@type: left) {
+	float: @type;
+}
+
+.clear() {
+	clear: both;
+}
+
+.outline(@col: #333333) {
+	outline: 1px solid @col;
+}

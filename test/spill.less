@@ -1,18 +1,12 @@
 @import "mixins.less";
 
-body, html {
-  font-size: 62.5%;
-  height:100%;
-  margin: 0;
-  padding: 0;
+body {
+	margin: 0;
+	padding: 0;
 }
 
-@btnTopColor: #ffe800;
-@btnBottomColor: #fda200;
-
-.box {
-	background: #fff;
-	border: 1px solid #909090;
+html {
+  font-size: 62.5%;
 }
 
 .loop(@index) when (@index > 0) {
@@ -25,118 +19,76 @@ body, html {
 .loop (0) {}
 
 #gameWrapper {
-	font-family: Arial;
-	background: #909090;
-	height: 100%;
-	background-image: url(img/eksperter-nettavisen.png);
-	background-repeat: no-repeat;
-	/*background-size: contain;*/
-	background-position: left bottom; 
+	background: #fff;
+	margin: 0;
 	#top {
-		height: 40px;
-		
-		background: url(img/blue_background.png) repeat-x;
+		height: 20px;
+		padding: 5px;
+		background: #ccc;
+		.font-size(14);
 		span.left {
-			width: 25%;
-			img {
-				max-width: 100%;
-				height: auto;
-			}
+			.float(left);
 		}
 		span.right {
-			display: inline-block;
-			color: #fff;
-			width: 75%;
-			.font-size(16);
-			text-align: center;
+			.float(right);
 		}
 	}
 	
 	#gameContent {
-		
-		
+		padding: 5px;
 		.expertContainer {
-			.float();
-			width: 40%;
-			
-			
-			/*margin-left: 20px;*/
-			
+			.expertImage {
+				width: 100px;
+				margin-right: 10px;
+				margin-bottom: 10px;
+				.float();
+			}
 			.expertText {
-				margin-left: 20px;
-				width: 80%;
-				margin-top: 10%;
-				padding: 15px;
-				h1 {
-					.font-serpentine();
-					.font-size(24);
-					margin-top: -10px;
-					margin-bottom: -10px;
-				}
-				p {
-
-					.font-size(14);
-				}
+				.font-size(14);
+				.float();
 			}
 		}
 		#games {
-
-			.float();
-			width: 58%;
-			margin-top: 10px;
 			.gameContainer {
 				.clear();
-				
-				margin-bottom: 10px;
 				.gameInfoContainer {
-					/*width: 100%;*/
-					// margin: 10px;
-					width: 80%;
-					.float(left);
 					.gameImage {
 						.float();
-						margin: 10px;
-						/*.font-size(16);
+						.font-size(16);
 						width: 50px;
 						height: 20px;
 						background: #ccc;
 						padding: 5px;
 						margin-right: 10px;
 						margin-bottom: 10px;
-						text-align: center;*/
+						text-align: center;
 					}
 					.gameHeading {
 						.float();
 						h1 {
-							.font-size(12);
+							.font-size(14);
 							font-weight: normal;
-							/*line-height: 12/2px;*/
+							line-height: 12/2px;
 						}
 						h2 {
 							.font-size(16);
 							font-weight: bold;
-							margin-top: -10px;
+							line-height: 14/2px;
 						}
 					}
 					.gameInfo {
-						margin: 10px;
 						.font-size(14);
-						.float();
 						.clear();
 					}
 				}
 				.gamePrice {
 					text-align: center;
-					width: 20%;
-					.float(left);
-					
 					.gameShares {
 						width: 50%;
 						.float();
-						.font-size(12);
+						.font-size(14);
 						span {
-							display: block;
-							.font-serpentine();
+							display: inline-block;
 							.font-size(16);
 							font-weight: bold;
 							text-align: center;
@@ -145,14 +97,12 @@ body, html {
 					.gameBuy {
 						width: 50%;
 						.float();
-						.font-size(26);
-						.font-serpentine();	
-
+						.font-size(18);
+						font-weight: bold;
+						font-family: "Serpentine W01 Medium";
 						a {
 							//.mybutton(#CCC, #222);
-							.oban-button-gradient(@btnTopColor, @btnBottomColor, #000);
-							text-decoration: none;
-							
+
 						}
 						a:hover {
 							//.mybuttonHover();
@@ -166,25 +116,20 @@ body, html {
 		}
 	}
 	#footer {
-		
-		
 		.clear();
-		display: block;
-		width: 100%;
 		text-align: center;
-		.blue-bg();
+		background: #ccc;
 		padding: 5px;
-		height: 40px;
-		.font-size(16);
+		.font-size(12);
 		a {
 			text-decoration: none;
-			color: #fff;
+			color: RGB(90,118,167);
 		}
 	}
 }
 
 /* mq's */
-/*@media all and (max-width: 467px) {
+@media all and (max-width: 467px) {
 	#gameWrapper {
 		#top {
 			span.right {
@@ -313,9 +258,9 @@ body, html {
 			}
 		}
 	}
-}*/
+}
 /* desktop */
-/*@media all and (min-width: 769px) and  (max-width: 1009px) {
+@media all and (min-width: 769px) and  (max-width: 1009px) {
 	#gameWrapper {
 		#gameContent {	
 			.expertContainer {
@@ -331,7 +276,7 @@ body, html {
 			#games {
 				width: 70%;
 				.float();
-				margin-top: -112px;
+				//margin-top: -112px;
 				
 				.gameContainer { 
 					
@@ -382,7 +327,7 @@ body, html {
 			#games {
 				width: 80%;
 				.float();
-				margin-top: -112px;
+				//margin-top: -112px;
 				
 				.gameContainer { 
 					
@@ -412,4 +357,4 @@ body, html {
 			}
 		}
 	}
-}*/
+}
