@@ -62,7 +62,6 @@ html {
 						margin-right: 10px;
 						margin-bottom: 10px;
 						text-align: center;
-						.outline(#333);
 					}
 					.gameHeading {
 						.float();
@@ -143,7 +142,7 @@ html {
 				display: none;
 			}
 			#games {
-				.loop(5);
+				.loop(2);
 				.gameContainer {
 					.gameHeading {
 						h1 {
@@ -187,7 +186,7 @@ html {
 				display: none;
 			}
 			#games {
-				.loop(5);
+				.loop(2);
 				.gameContainer {
 					.gamePrice {
 						.gameShares {
@@ -217,7 +216,7 @@ html {
 				}
 			}
 			#games {
-				.loop(5);
+				.loop(3);
 				.gameInfoContainer {
 					width: 75%;
 					.float();
@@ -233,14 +232,11 @@ html {
 						display: block;
 						span {
 							.font-size(20);
-							.outline();
 						}
 					}
 					.gameBuy {
 						.clear();
 						display: block;
-						.outline();
-						
 					}
 				}
 			}
@@ -266,8 +262,7 @@ html {
 /* desktop */
 @media all and (min-width: 769px) and  (max-width: 1009px) {
 	#gameWrapper {
-		#gameContent {
-			
+		#gameContent {	
 			.expertContainer {
 				width: 200px;
 				
@@ -276,21 +271,15 @@ html {
 					
 					.font-size(14);
 				}
-				.expertImage {
-					
-					
-				}
+			
 			}
 			#games {
 				width: 70%;
-				/*position: absolute;
-				left: 200px;
-				.clear();*/
 				.float();
 				margin-top: -112px;
 				
 				.gameContainer { 
-					width: 40%;
+					
 					display: inline-block;
 					padding: 5px;	
 					.gameInfoContainer {
@@ -337,14 +326,11 @@ html {
 			}
 			#games {
 				width: 80%;
-				/*position: absolute;
-				left: 200px;
-				.clear();*/
 				.float();
 				margin-top: -112px;
 				
 				.gameContainer { 
-					width: 45%;
+					
 					display: inline-block;
 					padding: 5px;	
 					.gameInfoContainer {
@@ -372,9 +358,3 @@ html {
 		}
 	}
 }
-
-/*@media all and (min-width: 980px) {
-	#gameWrapper {
-		
-	}
-}*/
