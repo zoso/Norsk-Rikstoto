@@ -1,0 +1,77 @@
+@import "mixins.less";
+
+body, html {
+  font-size: 62.5%;
+  height:100%;
+  margin: 0;
+  padding: 0;
+}
+
+@btnTopColor: #ffe800;
+@btnBottomColor: #fda200;
+
+.box {
+	/*background: #fff;*/
+	border: 1px solid #909090;
+}
+
+.loop(@index) when (@index > 0) {
+	.game_@{index} { 
+	//(~".game_@{index}") { //old compiler
+		display: none;
+	}
+	.loop((@index - 1));
+}
+.loop (0) {}
+
+#gameWrapper {
+	min-height: 100%;
+	background: #eee;
+	position: relative;
+	.font-size(12);
+	#top {
+		.blue-bg();
+		height: 40px;
+	}
+	.gameContent {
+		padding-bottom: 20px;
+		.expertContainer {
+			.expertImage {
+
+			}
+			.expertText {
+
+			}
+		}
+		#games {
+			.gameContainer {
+				.gameInfoContainer {
+					.gameImage {
+
+					}
+					.gameHeading {
+
+					}
+					.gameInfo {
+
+					}
+					.gamePrice {
+						.gameShares {
+
+						}
+						.gameBuy {
+
+						}
+					}
+					.spacer {
+
+					}
+				}
+			}
+		}
+	}
+	#footer {
+		.blue-bg();
+		height: 40px;
+	}
+}

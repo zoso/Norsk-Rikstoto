@@ -1,0 +1,5 @@
+body,html{font-size:62.5%;height:100%;margin:0;padding:0}
+.box{border:1px solid #909090}
+#gameWrapper{min-height:100%;background:#eee;position:relative;font-size:12px;line-height:18px;font-size:1.2rem;line-height:1.7999999999999998rem}#gameWrapper #top{background:url(../img/blue_background.png) repeat-x;height:40px}
+#gameWrapper .gameContent{padding-bottom:20px}
+#gameWrapper #footer{background:url(../img/blue_background.png) repeat-x;height:40px}
