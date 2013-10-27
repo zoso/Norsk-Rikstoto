@@ -5,14 +5,17 @@ body, html {
   height:100%;
   margin: 0;
   padding: 0;
+  font-family: Arial;
 }
 
 @btnTopColor: #ffe800;
 @btnBottomColor: #fda200;
-
+@bgColor: #909090;
 .box {
-	/*background: #fff;*/
+	background: #fff;
 	border: 1px solid #909090;
+	
+	padding: 20px;
 }
 
 .loop(@index) when (@index > 0) {
@@ -28,50 +31,186 @@ body, html {
 	min-height: 100%;
 	background: #eee;
 	position: relative;
+	background: url(../img/eksperter-nettavisen.png) no-repeat;
+	background-size:  30%;
+	background-position: left top;
+	background-color: @bgColor;
+
 	.font-size(12);
 	#top {
 		.blue-bg();
-		height: 40px;
+		position: relative;
+		span.left {
+			width: 120px;
+			height: 50%;
+			overflow: auto;
+			margin-left: 20px;
+			margin-top: 10px;
+			position: absolute;
+			text-align: center;
+			top: 0; left: 0; bottom: 0; right: 0;
+			color: #fff;
+		}
+		span.right {
+			width: 50%;
+			height: 50%;
+			overflow: auto;
+			margin: auto;
+			position: absolute;
+			text-align: center;
+			top: 0; left: 0; bottom: 0; right: 0;
+			color: #fff;
+			.font-size(14);
+		}
 	}
-	.gameContent {
+	#gameContent {
 		padding-bottom: 20px;
 		.expertContainer {
+			width: 30%;
+			margin: 20px;
+				
+			.float();
 			.expertImage {
 
 			}
 			.expertText {
+				position: absolute;
+				bottom: 60px;
+				width: 26%;
+				h1 {
+					.font-serpentine();
+					.font-size(18);
+					line-height: 50%;
+				}
+				p {
 
+				}
 			}
 		}
 		#games {
+			width: 66%;
+			.float();
 			.gameContainer {
+				margin: 20px 20px 20px 0;
 				.gameInfoContainer {
+					
 					.gameImage {
-
+						.float();
+						margin-right: 10px;
 					}
 					.gameHeading {
-
+						.float();
+						margin-top: -5px;
+						h1 {
+							.font-size(11);
+							font-weight: normal;
+							line-height: 40%;
+						}
+						h2 {
+							.font-size(18);
+							line-height: 20%;
+						}
 					}
 					.gameInfo {
-
+						.clear();
+						.outline();
+						.float();
+						width: 70%;
 					}
-					.gamePrice {
-						.gameShares {
-
+				}
+				.gamePrice {
+					width: 30%;
+					.outline();
+					.float();
+					text-align: center;
+					.gameShares {
+						width: 50%;
+						.float();
+						span {
+							.font-size(16);
+							.font-serpentine();
+							display: block;
 						}
-						.gameBuy {
+					}
+					.gameBuy {
+						width: 50%;
+						.float();
+						.font-size(26);
+						.font-serpentine();	
 
+						a {
+							//.mybutton(#CCC, #222);
+							.oban-button-gradient(@btnTopColor, @btnBottomColor, #000);
+							text-decoration: none;
+							
+						}
+						a:hover {
+							//.mybuttonHover();
 						}
 					}
-					.spacer {
-
-					}
+				}
+				.spacer {
+					.clear();
 				}
 			}
 		}
 	}
 	#footer {
+		.clear();
 		.blue-bg();
-		height: 40px;
+		position: relative;
+		.center {
+			width: 95%;
+			height: 50%;
+			overflow: auto;
+			margin: auto;
+			position: absolute;
+			text-align: right;
+			top: 0; left: 0; bottom: 0; right: 0;
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+		}
 	}
 }
+/* mq's */
+@media all and (min-width: 1025px) {
+	#gameWrapper {
+		#top {
+			span.right {
+				.font-size(13);
+			}
+			span.right:after {
+				content: " - min 1025";
+			}
+		}
+	}
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+	#gameWrapper {
+		#top {
+			span.right {
+				.font-size(11);
+			}
+			span.right:after {
+				content: " - min 768 & max 1024";
+			}
+		}
+	}
+}
+
+@media all and (max-width: 767px) {
+	#gameWrapper {
+		#top {
+			span.right {
+				.font-size(10);
+			}
+			span.right:after {
+				content: " - max 767";
+			}
+		}
+	}
+}
+
