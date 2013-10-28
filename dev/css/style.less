@@ -15,7 +15,7 @@ body, html {
 	background: #fff;
 	border: 1px solid #909090;
 	
-	padding: 20px;
+	padding: 10px 10px 0 10px;
 }
 
 .loop(@index) when (@index > 0) {
@@ -32,8 +32,8 @@ body, html {
 	background: #eee;
 	position: relative;
 	background: url(../img/eksperter-nettavisen.png) no-repeat;
-	background-size:  30%;
-	background-position: left top;
+	background-size: auto;
+	background-position: -100px bottom;
 	background-color: @bgColor;
 
 	.font-size(12);
@@ -68,11 +68,7 @@ body, html {
 		.expertContainer {
 			width: 30%;
 			margin: 20px;
-				
 			.float();
-			.expertImage {
-
-			}
 			.expertText {
 				position: absolute;
 				bottom: 60px;
@@ -82,9 +78,6 @@ body, html {
 					.font-size(18);
 					line-height: 50%;
 				}
-				p {
-
-				}
 			}
 		}
 		#games {
@@ -93,7 +86,6 @@ body, html {
 			.gameContainer {
 				margin: 20px 20px 20px 0;
 				.gameInfoContainer {
-					
 					.gameImage {
 						.float();
 						margin-right: 10px;
@@ -113,29 +105,33 @@ body, html {
 					}
 					.gameInfo {
 						.clear();
-						.outline();
 						.float();
 						width: 70%;
 					}
 				}
 				.gamePrice {
 					width: 30%;
-					.outline();
 					.float();
 					text-align: center;
+					
+					height: 50%;
+					/*vertical-align: bottom;*/
 					.gameShares {
 						width: 50%;
 						.float();
+						margin-top: 15%;
 						span {
 							.font-size(16);
 							.font-serpentine();
-							display: block;
+						}
+						span.smallnr {
+							.font-size(12);
 						}
 					}
 					.gameBuy {
 						width: 50%;
 						.float();
-						.font-size(26);
+						.font-size(22);
 						.font-serpentine();	
 
 						a {
@@ -188,28 +184,87 @@ body, html {
 	}
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (min-width: 735px) and (max-width: 1024px) {
 	#gameWrapper {
+		background-size: 65%;
 		#top {
 			span.right {
 				.font-size(11);
 			}
 			span.right:after {
-				content: " - min 768 & max 1024";
+				content: " - min 735 & max 1024";
+			}
+		}
+		#gameContent {
+			.expertContainer {
+				width: 30%;
+				.expertText {
+					display: none;
+				}
+			}
+			#games {
+				width: 63%;
+				.loop(1);
+			}
+		}
+
+	}
+}
+
+@media all and (min-width: 441px) and (max-width: 734px) {
+	#gameWrapper {
+		background: @bgColor;
+		#top {
+			span.right {
+				.font-size(10);
+				width: 95%;
+				text-align: right;
+			}
+			span.right:after {
+				content: " min 441 - max 734";
+			}
+		}
+		#gameContent {
+			.expertContainer {
+				display: none;
+			}
+			#games {
+				margin-left: 10px;
+				width: 100%;
+				.loop(1);
 			}
 		}
 	}
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 440px) {
 	#gameWrapper {
+		background: @bgColor;
 		#top {
 			span.right {
-				.font-size(10);
+				display: none;
 			}
-			span.right:after {
-				content: " - max 767";
+		}
+		#gameContent {
+			.expertContainer {
+				display: none;
 			}
+
+		
+			#games {
+				margin-left: 10px;
+				width: 100%;
+				.loop(2);
+				.gameInfoContainer {
+					width: 100%;
+					.clear();
+				}
+				.gamePrice {
+					width: 100%;
+					.clear();
+				}
+			}
+	
 		}
 	}
 }
