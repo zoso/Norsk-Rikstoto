@@ -1,0 +1,75 @@
+@media @tablet600x600 {
+	#gameWrapper {
+		background: @bgColor;
+		#top {
+			height: 30px;
+			span.left {
+				margin-top: 5px;
+			}
+			span.right {
+				width: 95%;
+				.font-size(12);
+				text-align: right;
+			}
+			span.right:after {
+				content: ": 600x600";
+			}
+		}
+		#gameContent {
+			
+			.clear();
+			.expertContainer {
+				display: none;
+				.expertImage {
+
+				}
+				.expertText {
+
+				}
+			}
+			#games {
+				.clear();
+				width: 100%;
+				.gameContainer {
+					padding: 13px 20px 0 20px;
+					margin: 0;
+					display: block;
+					.gameInfoContainer {
+						padding: 0;
+						.gameImage {
+
+						}
+						.gameHeading {
+
+						}
+						.gameInfo {
+							display: inline;
+						}
+					}
+					.gamePrice {
+						.gameShares {
+							span.smallText {
+								display: block;
+								font-family: Arial;
+								.font-size(12);
+							}
+						}
+						.gameBuy {
+
+						}
+					}
+					.spacer {
+						height: 10px;
+					}
+				}
+
+			}	
+		}
+		#footer {
+			height: 40px;
+			.center {
+				height: 50%;
+			}
+		}
+	}
+}

@@ -1,0 +1,87 @@
+@media @large980x600 {
+	#gameWrapper {
+		min-height: 100%;
+		background: #eee;
+		position: relative;
+		background: url(../img/eksperter-nettavisen.png) no-repeat;
+		background-size: auto;
+		background-position: -120px bottom;
+		background-color: @bgColor;
+		#top {
+			height: 40px;
+			span.left {
+
+			}
+			span.right {
+				.font-size(12);
+			}
+			span.right:after {
+				content: ": 980x600";
+			}
+		}
+		#gameContent {
+			width: 100%;
+			.expertContainer {
+				width: 35%;
+				display: block;
+				.float();
+				.expertImage {
+					
+				}
+				.expertText {
+					padding: 10px;
+					bottom: 50px;
+					width: 34%;
+					h1 {
+						.font-size(18);
+						margin-top: -5px;
+					}
+				}
+			}
+			#games {
+				width: 60%;
+				.float();
+				.gameContainer {
+					margin: 20px 10px 10px 20px;
+					.gameInfoContainer {
+
+						padding: 20px;
+						.gameImage {
+
+						}
+						.gameHeading {
+
+						}
+						.gameInfo {
+							margin-top: 10px;
+						}
+					}
+					.gamePrice {
+						
+						.gameShares {
+							span.smallText {
+								display: block;
+								font-family: Arial;
+								.font-size(12);
+							}
+							//margin-right: 5px;
+						}
+						.gameBuy {
+							
+						}
+					}
+					.spacer {
+						height: 21px;
+					}
+				}
+			}
+			.loop(1);
+		}
+		#footer {
+			height: 40px;
+			.center {
+				height: 50%;
+			}
+		}
+	}
+}
