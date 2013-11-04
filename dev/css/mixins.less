@@ -30,6 +30,13 @@
     background-position: 0 -99px;
 }
 
+.font-size2(@size: 12) {
+  @remValue: @sizeValue * 0.0625;
+  @pxValue: (@remValue * 16);
+  font-size: ~”@{pxValue}px”;
+  font-size: ~”@{remValue}rem”;
+}
+
 .font-size(@font-size: 16){
     @pxFontValue: (@font-size / 10);
     @pxLineValue: (@font-size / 10 * 1.5);
