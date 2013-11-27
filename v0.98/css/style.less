@@ -760,24 +760,26 @@ body, html {
 				width: 100%;
 				padding: 0;
 				.gameContainer {
-					padding: 0;
+					padding: 5px;
 					margin: 0;
-					min-height: 200px;
-					.outline();
+					min-height: 180px;
+					
 					.gameInfoContainer {
 						.outline();
 						width: 100%;
-						padding: 10px 0px 0px 10px;
+						/*padding: 10px 0px 0px 10px;*/
 						margin: 0;
-						
+						min-height: 120px;
 						.gameInfo {
-							width: 96%;
+							/*width: 96%;*/
 						}
 					}
 					.gamePrice {
-						padding: 0;
+						
+						position: relative;
+						bottom: 0;
+						right: 0;
 						width: 100%;
-						display: block;
 						.gameShares {
 							padding: 0;
 							margin-top: 2px;
@@ -803,7 +805,7 @@ body, html {
 						}
 					}
 					.spacer {
-						height: 1x;
+						height: 1px;
 					}
 				}
 				.loop(5);
