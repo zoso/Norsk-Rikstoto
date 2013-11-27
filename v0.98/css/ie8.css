@@ -1,0 +1,17 @@
+span .right {
+	text-align: right;
+	width: 700px;
+	background: #ccc;
+}
+#gameWrapper #gameContent #games .gameContainer .gameInfoContainer .gameHeading h1
+	line-height: 12px;
+	font-size: 12px;
+}
+#gameWrapper #gameContent #games .gameContainer .gamePrice .gameBuy a {
+	background: #ffe800;
+	padding: 5px;
+}
+
+.gamePrice {
+	position: relative;
+}
